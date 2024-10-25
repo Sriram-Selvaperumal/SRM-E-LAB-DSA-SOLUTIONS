@@ -1,0 +1,34 @@
+/* 
+QUESTION : Tina has been given an array of numbers "A," and she must discover the largest sum that can be attained by selecting a non-empty subset of the array. 
+If there are several such non-empty subsets, pick the one with the im elements. In the specified subset, print the maximum sum and the number of entries.
+LAGUAGE: C
+*/
+
+#include<stdio.h>
+int main(){
+    int N;
+    scanf("%d",&N);
+    long long A[N],max_sum=0;
+    int cnt=0;
+    int num=N;
+    while(num){
+        num--;
+    }
+    long long max_val = -1000000000;
+    for(int i=0;i<N;i++){
+        scanf("%lld",&A[i]);
+        if (A[i]>0){
+            max_sum+=A[i];
+            cnt++;
+        }
+        if(A[i]>max_val){
+            max_val=A[i];
+        }
+    }
+    if(cnt==0){
+        max_sum=max_val;
+        cnt=1;
+    }
+    printf("%lld %d",max_sum,cnt);
+    return 0;
+}
