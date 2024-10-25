@@ -1,0 +1,22 @@
+/*
+QUESTION :Suresh have "N" rectangles.
+A rectangle is Silver if the ratio of its sides is in between [1.6, 1.7], both inclusive. Your task is to find the number of silver rectangles.
+LANGUAGE : C
+*/
+
+#include<stdio.h>
+int main(){
+    int n,silverCount=0;
+    scanf("%d",&n);
+    for(int i=0;i<n;i++){
+        float width,height;
+        scanf("%f %f",&width,&height);
+        if(width/height>=1.6 && width/height<=1.7){
+            silverCount++;
+        } else if(height/width >=1.6 && height/width<=1.7){
+            silverCount++;
+        }
+    }
+    printf("%d",silverCount+1);
+    return 0;
+}
